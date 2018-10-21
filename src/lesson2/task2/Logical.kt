@@ -33,8 +33,8 @@ fun queenThreatens(x1: Int, y1: Int, x2: Int, y2: Int): Boolean {
     По определению углового коэффициента имеем, что k = (y-y0)/(x-x0)
     слон на диагонали от короля, если k = 1 или k = -1
     */
-    val k = if (x1 != x2) (y1 - y2) / (x1 - x2) else 0
-    return (k == 1 || k == -1 || x1 == x2 || y1 == y2)
+    val k: Double = if (x1 != x2) 1.0 * (y1 - y2) / (x1 - x2) else 0.0
+    return (k == 1.0 || k == -1.0 || x1 == x2 || y1 == y2)
 }
 
 
@@ -73,7 +73,7 @@ fun daysInMonth(month: Int, year: Int): Int {
 fun circleInside(x1: Double, y1: Double, r1: Double,
                  x2: Double, y2: Double, r2: Double): Boolean {
 
-    val isInside = pointInsideCircle(x1, x2, x2, y2, r2)
+    val isInside = pointInsideCircle(x1, y1, x2, y2, r2)
     val centersDistance = sqrt(sqr(x1 - x2) + sqr(y1 - y2)) // расстояние между центрами
     return isInside && (centersDistance <= (r2 - r1))
 }

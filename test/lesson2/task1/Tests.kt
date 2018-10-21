@@ -1,6 +1,6 @@
 package lesson2.task1
 
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Tag
 import org.junit.jupiter.api.Test
 
@@ -40,6 +40,9 @@ class Tests {
         assertEquals("12 лет", ageDescription(12))
         assertEquals("111 лет", ageDescription(111))
         assertEquals("199 лет", ageDescription(199))
+        assertEquals("2 года", ageDescription(2))
+        assertEquals("5 лет", ageDescription(5))
+        assertEquals("39 лет", ageDescription(39))
     }
 
     @Test
@@ -48,6 +51,8 @@ class Tests {
         assertEquals(2.5, timeForHalfWay(1.0, 5.0, 2.0, 4.0, 3.0, 3.0), 1e-2)
         assertEquals(3.67, timeForHalfWay(4.0, 3.0, 1.0, 4.0, 1.0, 6.0), 1e-2)
         assertEquals(4.4, timeForHalfWay(3.0, 0.0, 1.0, 6.0, 2.0, 5.0), 1e-2)
+        assertEquals(1.0, timeForHalfWay(0.0, 0.0, 0.0, 0.0, 2.0, 10.0), 1e-2)
+        assertEquals(1.0, timeForHalfWay(1.0, 1.0, 1.0, 1.0, 1.0, 0.0), 1e-2)
     }
 
     @Test
@@ -66,6 +71,9 @@ class Tests {
         assertEquals(1, rookOrBishopThreatens(2, 8, 6, 8, 1, 6))
         assertEquals(2, rookOrBishopThreatens(5, 4, 3, 7, 1, 8))
         assertEquals(3, rookOrBishopThreatens(1, 6, 7, 6, 3, 8))
+        // kingX -> 2, kingY -> 8, rookX -> 1, rookY -> 8, bishopX -> 6, bishopY -> 2
+        assertEquals(1, rookOrBishopThreatens(2, 8, 1, 8, 6, 2))
+
     }
 
     @Test
