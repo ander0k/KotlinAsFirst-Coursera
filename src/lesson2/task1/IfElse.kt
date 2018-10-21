@@ -138,9 +138,9 @@ fun rookOrBishopThreatens(kingX: Int, kingY: Int,
     По определению углового коэффициента имеем, что k = (y-y0)/(x-x0)
     слон на диагонали от короля, если k = 1 или k = -1
     */
-    val k = if (bishopX != kingX) (bishopY - kingY) / (bishopX - kingX) else 0
+    val k: Double = if (bishopX != kingX) 1.0 * (bishopY - kingY) / (bishopX - kingX) else 0.0
     val rookCanThreat = if (rookX == kingX || rookY == kingY) 1 else 0
-    val bishopCanThreat = if (k == 1 || k == -1) 2 else 0
+    val bishopCanThreat = if (k == 1.0 || k == -1.0) 2 else 0
     return rookCanThreat + bishopCanThreat
 }
 
